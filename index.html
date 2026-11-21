@@ -432,7 +432,7 @@
     .disco-art { position: relative; aspect-ratio: 1; overflow: hidden; background: var(--walnut-950); }
     .disco-art .bg {
       position: absolute; inset: 0;
-      background: var(--pw-logo) center 70% / 92% no-repeat #000;
+      background: var(--cover-img) center / cover no-repeat #000;
       transition: transform .7s ease, filter .7s ease;
     }
     
@@ -457,7 +457,7 @@
     .disco-art .play svg { width: 20px; height: 20px; margin-left: 3px; }
     .disco-art .play { display: none; }
     .soon {
-      position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+      position: absolute; top: 12px; left: 12px;
       font-family: 'Cinzel', serif; font-size: 9px; font-weight: 700;
       letter-spacing: 3px; text-transform: uppercase; white-space: nowrap;
       color: #2a1a08; background: var(--gilt);
@@ -474,6 +474,28 @@
     .disco-title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 22px; color: var(--cream); }
     .disco-meta { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); }
 
+
+    /* Coming-soon tracklist */
+    .soon-layout { display: grid; grid-template-columns: 380px 1fr; gap: 70px; align-items: start; }
+    .soon-art { position: sticky; top: calc(var(--nav-h) + 30px); }
+    .soon-note { margin-top: 26px; font-style: italic; font-size: 17px; color: var(--muted); text-align: center; }
+    .tracklist { list-style: none; columns: 2; column-gap: 48px; border-top: 1px solid rgba(201,162,74,.45); padding-top: 6px; }
+    .trk {
+      break-inside: avoid;
+      display: grid; grid-template-columns: 38px 1fr auto; align-items: baseline; gap: 12px;
+      padding: 13px 4px;
+      border-bottom: 1px dotted rgba(201,162,74,.28);
+      transition: background .25s;
+    }
+    .trk:hover { background: rgba(201,162,74,.07); }
+    .trk-n { font-family: 'Cinzel', serif; font-size: 12px; font-weight: 600; letter-spacing: 1px; color: var(--brass); }
+    .trk-t { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 21px; line-height: 1.2; color: var(--cream); }
+    .trk-d { font-size: 15px; font-style: italic; color: var(--muted); }
+    @media (max-width: 1024px) {
+      .soon-layout { grid-template-columns: 1fr; gap: 48px; }
+      .soon-art { position: static; max-width: 380px; margin: 0 auto; }
+    }
+    @media (max-width: 768px) { .tracklist { columns: 1; } .trk-t { font-size: 19px; } }
     /* ============================================================
        MANIFESTO — tooled leather
     ============================================================ */
@@ -882,39 +904,42 @@
   <div class="disco-wrap reveal">
     <div class="disco-head">
       <div>
-        <p class="section-label">From the Album · Boundaries</p>
-        <h3>Songs <em>Coming Soon</em></h3>
+        <p class="section-label">The Tracklist · Boundaries</p>
+        <h3>The <em>Songs</em></h3>
       </div>
       <a href="#mail-form" class="btn ghost">Get Notified</a>
     </div>
-    <div class="disco-grid">
-      <div class="disco-card">
+    <div class="soon-layout">
+      <div class="soon-art">
         <div class="frame"><div class="mat"><div class="disco-art">
           <div class="bg"></div>
-          <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-          <div class="soon">Coming Soon</div>
         </div></div></div>
         <div class="shelf"></div>
-        <div class="disco-info"><span class="disco-title">Track 01 — Title TBA</span><span class="disco-meta">Boundaries</span></div>
+        <p class="soon-note">21 songs &middot; 91 minutes &middot; Purpose Wave Entertainment</p>
       </div>
-      <div class="disco-card">
-        <div class="frame"><div class="mat"><div class="disco-art">
-          <div class="bg"></div>
-          <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-          <div class="soon">Coming Soon</div>
-        </div></div></div>
-        <div class="shelf"></div>
-        <div class="disco-info"><span class="disco-title">Track 02 — Title TBA</span><span class="disco-meta">Boundaries</span></div>
-      </div>
-      <div class="disco-card">
-        <div class="frame"><div class="mat"><div class="disco-art">
-          <div class="bg"></div>
-          <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-          <div class="soon">Coming Soon</div>
-        </div></div></div>
-        <div class="shelf"></div>
-        <div class="disco-info"><span class="disco-title">Track 03 — Title TBA</span><span class="disco-meta">Boundaries</span></div>
-      </div>
+      <ol class="tracklist">
+        <li class="trk"><span class="trk-n">01</span><span class="trk-t">Grow Up</span><span class="trk-d">4:39</span></li>
+        <li class="trk"><span class="trk-n">02</span><span class="trk-t">The Weight of My Name</span><span class="trk-d">5:14</span></li>
+        <li class="trk"><span class="trk-n">03</span><span class="trk-t">Why Me?</span><span class="trk-d">4:41</span></li>
+        <li class="trk"><span class="trk-n">04</span><span class="trk-t">A Mailbox Named Revolver</span><span class="trk-d">4:16</span></li>
+        <li class="trk"><span class="trk-n">05</span><span class="trk-t">We In Texas</span><span class="trk-d">4:26</span></li>
+        <li class="trk"><span class="trk-n">06</span><span class="trk-t">Why Are We Talking</span><span class="trk-d">4:56</span></li>
+        <li class="trk"><span class="trk-n">07</span><span class="trk-t">Whataboutisms</span><span class="trk-d">3:14</span></li>
+        <li class="trk"><span class="trk-n">08</span><span class="trk-t">Has Hip-Hop Been Dumbed Down? (Remix)</span><span class="trk-d">3:32</span></li>
+        <li class="trk"><span class="trk-n">09</span><span class="trk-t">You Can Keep It</span><span class="trk-d">4:38</span></li>
+        <li class="trk"><span class="trk-n">10</span><span class="trk-t">Ratchet Behaviors</span><span class="trk-d">2:45</span></li>
+        <li class="trk"><span class="trk-n">11</span><span class="trk-t">Current Credentials</span><span class="trk-d">2:59</span></li>
+        <li class="trk"><span class="trk-n">12</span><span class="trk-t">The Comfort of Being Wrong</span><span class="trk-d">4:18</span></li>
+        <li class="trk"><span class="trk-n">13</span><span class="trk-t">My Fault, You Got It (Remix)</span><span class="trk-d">4:09</span></li>
+        <li class="trk"><span class="trk-n">14</span><span class="trk-t">Walk In Line (Remix)</span><span class="trk-d">2:31</span></li>
+        <li class="trk"><span class="trk-n">15</span><span class="trk-t">Followership Consciousness</span><span class="trk-d">5:39</span></li>
+        <li class="trk"><span class="trk-n">16</span><span class="trk-t">Network Ain&#x27;t the Bond</span><span class="trk-d">5:03</span></li>
+        <li class="trk"><span class="trk-n">17</span><span class="trk-t">Association, Membership &amp; Bonding</span><span class="trk-d">4:53</span></li>
+        <li class="trk"><span class="trk-n">18</span><span class="trk-t">Can You See Me?</span><span class="trk-d">4:53</span></li>
+        <li class="trk"><span class="trk-n">19</span><span class="trk-t">Guilty of Being an Overachiever</span><span class="trk-d">4:19</span></li>
+        <li class="trk"><span class="trk-n">20</span><span class="trk-t">Family Ties</span><span class="trk-d">5:08</span></li>
+        <li class="trk"><span class="trk-n">21</span><span class="trk-t">Trying Times</span><span class="trk-d">5:01</span></li>
+      </ol>
     </div>
   </div>
 </section>
