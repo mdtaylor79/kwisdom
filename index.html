@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>K.Wisdom — Official Site</title>
   <meta name="description" content="Official website of K.Wisdom. The new album BOUNDARIES — now available on Purpose Wave Entertainment." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
@@ -341,6 +343,7 @@
       position: relative; aspect-ratio: 1; overflow: hidden;
       background: var(--walnut-950);
     }
+    .cover-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .cover-img {
       position: absolute; inset: 0;
       background: url('kwisdom_hero.jpg') 50% 18% / 240% auto no-repeat;
@@ -426,14 +429,14 @@
     .disco-art { position: relative; aspect-ratio: 1; overflow: hidden; background: var(--walnut-950); }
     .disco-art .bg {
       position: absolute; inset: 0;
-      background: url('kwisdom_hero.jpg') no-repeat;
-      filter: saturate(.85) contrast(1.05);
+      background: url('boundaries_cover.jpg') no-repeat;
+      filter: saturate(.85) contrast(1.05) brightness(.82);
       transition: transform .7s ease, filter .7s ease;
     }
-    .disco-card:nth-child(1) .bg { background-position: 3% 0%; background-size: 300% auto; }
-    .disco-card:nth-child(2) .bg { background-position: 86% 0%; background-size: 300% auto; }
-    .disco-card:nth-child(3) .bg { background-position: 69% 100%; background-size: 320% auto; }
-    .disco-card:hover .bg { transform: scale(1.06); filter: saturate(.7) brightness(.6); }
+    .disco-card:nth-child(1) .bg { background-position: 19% 13%; background-size: 220% auto; }
+    .disco-card:nth-child(2) .bg { background-position: 100% 52%; background-size: 170% auto; }
+    .disco-card:nth-child(3) .bg { background-position: 30% 100%; background-size: 230% auto; }
+    .disco-card:hover .bg { transform: scale(1.05); }
     .disco-art .label {
       position: absolute; left: 0; right: 0; bottom: 16px; text-align: center;
       font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600;
@@ -450,7 +453,16 @@
       box-shadow: 0 8px 20px rgba(0,0,0,.6);
     }
     .disco-art .play svg { width: 20px; height: 20px; margin-left: 3px; }
-    .disco-card:hover .play { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+    .disco-art .play { display: none; }
+    .soon {
+      position: absolute; top: 18px; left: 50%; transform: translateX(-50%);
+      font-family: 'Cinzel', serif; font-size: 10px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase; white-space: nowrap;
+      color: #2a1a08; background: var(--gilt);
+      padding: 7px 14px 6px;
+      box-shadow: 0 6px 14px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,240,200,.5);
+    }
+    .disco-card { cursor: default; }
     .shelf {
       height: 16px; margin: 0 -14px;
       background: linear-gradient(180deg, #5a3320 0%, #3a1f12 55%, #24120a 100%);
@@ -844,10 +856,7 @@
         <div class="cover-sticker">NEW<br>RELEASE</div>
         <div class="mat">
           <div class="cover">
-            <div class="cover-img"></div>
-            <div class="cover-shade"></div>
-            <div class="cover-artist">K.Wisdom</div>
-            <div class="cover-title gold-text">Boundaries</div>
+            <img class="cover-art" src="boundaries_cover.jpg" alt="K.Wisdom — Boundaries album cover" />
           </div>
         </div>
       </div>
@@ -871,38 +880,41 @@
   <div class="disco-wrap reveal">
     <div class="disco-head">
       <div>
-        <p class="section-label">Discography</p>
-        <h3>The <em>Collection</em></h3>
+        <p class="section-label">From the Album · Boundaries</p>
+        <h3>Songs <em>Coming Soon</em></h3>
       </div>
-      <a href="#" class="btn ghost">All Releases</a>
+      <a href="#mail-form" class="btn ghost">Get Notified</a>
     </div>
     <div class="disco-grid">
       <div class="disco-card">
         <div class="frame"><div class="mat"><div class="disco-art">
           <div class="bg"></div>
           <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-          <div class="label">Boundaries</div>
+          <div class="soon">Coming Soon</div>
+          <div class="label">Track 01</div>
         </div></div></div>
         <div class="shelf"></div>
-        <div class="disco-info"><span class="disco-title">Boundaries</span><span class="disco-meta">Album · 2026</span></div>
+        <div class="disco-info"><span class="disco-title">Track 01 — Title TBA</span><span class="disco-meta">Boundaries</span></div>
       </div>
       <div class="disco-card">
         <div class="frame"><div class="mat"><div class="disco-art">
           <div class="bg"></div>
           <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-          <div class="label">Release Two</div>
+          <div class="soon">Coming Soon</div>
+          <div class="label">Track 02</div>
         </div></div></div>
         <div class="shelf"></div>
-        <div class="disco-info"><span class="disco-title">Release Two</span><span class="disco-meta">Single · 2026</span></div>
+        <div class="disco-info"><span class="disco-title">Track 02 — Title TBA</span><span class="disco-meta">Boundaries</span></div>
       </div>
       <div class="disco-card">
         <div class="frame"><div class="mat"><div class="disco-art">
           <div class="bg"></div>
           <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-          <div class="label">Release Three</div>
+          <div class="soon">Coming Soon</div>
+          <div class="label">Track 03</div>
         </div></div></div>
         <div class="shelf"></div>
-        <div class="disco-info"><span class="disco-title">Release Three</span><span class="disco-meta">Single · 2025</span></div>
+        <div class="disco-info"><span class="disco-title">Track 03 — Title TBA</span><span class="disco-meta">Boundaries</span></div>
       </div>
     </div>
   </div>
